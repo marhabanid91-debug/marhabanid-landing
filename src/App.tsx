@@ -384,16 +384,6 @@ function App() {
               تفعيل بطاقتك
             </a>
           </div>
-          <div className="trust-row">
-            <div className="avatar-stack" aria-hidden="true">
-              <span>AM</span>
-              <span>SK</span>
-              <span>RH</span>
-            </div>
-            <p>
-              يثق بنا أكثر من <strong>+2,000</strong> مستخدم متصل
-            </p>
-          </div>
         </div>
 
         <div className="hero-visual" aria-label="عرض توضيحي لمنتج مرحباً">
@@ -621,7 +611,12 @@ function App() {
               تحدث معنا
               <Icon name="arrow" size={18} />
             </a>
-            <a className="button button-secondary" href="mailto:hello@marhabanid.com">
+            <a
+              className="button button-secondary"
+              href="https://marhabanid.com"
+              rel="noreferrer"
+              target="_blank"
+            >
               تفعيل بطاقتك
             </a>
           </div>
