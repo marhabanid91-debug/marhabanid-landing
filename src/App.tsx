@@ -2,6 +2,25 @@ import { useState, type ReactNode } from "react";
 import marhabanCardSource from "./assets/marhaban-card-source.jpg";
 import marhabanLogo from "./assets/marhaban-logo.png";
 import marhabanMedallions from "./assets/marhaban-medallions.png";
+import shotPersonal from "./assets/shot-personal.png";
+import shotProfessional from "./assets/shot-professional.png";
+import shotEvents from "./assets/shot-events.png";
+import shotGifts from "./assets/shot-gifts.png";
+
+const shotStyle = {
+  width: "100%",
+  maxWidth: 320,
+  height: "auto",
+  display: "block",
+  margin: "0 auto",
+} as const;
+const giftShotStyle = {
+  width: "100%",
+  maxWidth: 640,
+  height: "auto",
+  display: "block",
+  margin: "0 auto",
+} as const;
 
 type IconName =
   | "arrow"
@@ -527,10 +546,34 @@ function App() {
           </div>
 
           <div className={`solution-preview preview-${solution.id}`}>
-            {solution.id === "personal" && <PersonalPreview />}
-            {solution.id === "professional" && <ProfessionalPreview />}
-            {solution.id === "events" && <EventPreview />}
-            {solution.id === "gifts" && <GiftsPreview />}
+            {solution.id === "personal" &&
+              (shotPersonal ? (
+                <img alt="وضع الطوارئ" src={shotPersonal} style={shotStyle} />
+              ) : (
+                <PersonalPreview />
+              ))}
+            {solution.id === "professional" &&
+              (shotProfessional ? (
+                <img alt="وضع الأعمال" src={shotProfessional} style={shotStyle} />
+              ) : (
+                <ProfessionalPreview />
+              ))}
+            {solution.id === "events" &&
+              (shotEvents ? (
+                <img alt="وضع الفعاليات" src={shotEvents} style={shotStyle} />
+              ) : (
+                <EventPreview />
+              ))}
+            {solution.id === "gifts" &&
+              (shotGifts ? (
+                <img
+                  alt="لوحة هدية عيد ميلاد بباركود وأغنية"
+                  src={shotGifts}
+                  style={giftShotStyle}
+                />
+              ) : (
+                <GiftsPreview />
+              ))}
           </div>
         </div>
       </section>
