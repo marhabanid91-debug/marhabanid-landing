@@ -1,11 +1,5 @@
 import { useState, type ReactNode } from "react";
-import marhabanCardSource from "./assets/marhaban-card-source.jpg";
 import marhabanLogo from "./assets/marhaban-logo.png";
-import marhabanMedallions from "./assets/marhaban-medallions.png";
-import shotPersonal from "./assets/shot-personal.png";
-import shotProfessional from "./assets/shot-professional.png";
-import shotEvents from "./assets/shot-events.png";
-import shotGifts from "./assets/shot-gifts.png";
 
 const shotStyle = {
   width: "100%",
@@ -314,6 +308,9 @@ function App() {
             <a href="#security" onClick={() => setMenuOpen(false)}>
               الأمان
             </a>
+            <a href="https://marhabanid.com/portfolio.html" rel="noreferrer" target="_blank">
+              المعرض
+            </a>
           </nav>
           <a
             className="nav-cta"
@@ -396,37 +393,28 @@ function App() {
             </a>
             <a
               className="button button-secondary"
-              href="https://marhabanid.com"
+              href="https://marhabanid.com/portfolio.html"
               rel="noreferrer"
               target="_blank"
             >
-              تفعيل بطاقتك
+              شاهد معرض المنتجات
             </a>
           </div>
         </div>
 
         <div className="hero-visual" aria-label="عرض توضيحي لمنتج مرحباً">
           <div className="visual-grid" />
-          <div className="product-showcase">
-            <div className="medallion-photo">
-              <img src={marhabanMedallions} alt="ميداليات مرحباً الذكية بتقنية NFC" />
-              <span>ميدالية NFC الذكية</span>
-            </div>
-            <div className="card-photo-shell">
-              <div className="card-photo-window">
-                <img src={marhabanCardSource} alt="بطاقة مرحباً السوداء والذهبية مع رمز QR" />
-              </div>
-              <div className="card-photo-label">
-                <span>
-                  <Icon name="qr" size={14} />
-                </span>
-                <div>
-                  <small>بطاقة الهوية الذكية</small>
-                  <strong>مسح سريع واتصال فوري</strong>
-                </div>
-              </div>
-            </div>
-          </div>
+          <a
+            className="portfolio-card"
+            href="https://marhabanid.com/portfolio.html"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <img src={marhabanLogo} alt="شعار مرحباً" />
+            <strong>معرض منتجات مرحباً</strong>
+            <small>بطاقات وميداليات وإكسسوارات وتوزيعات فعاليات</small>
+            <span>شاهد المعرض ←</span>
+          </a>
           <div className="signal-card signal-top">
             <span className="signal-icon">
               <Icon name="check" size={16} />
@@ -546,34 +534,10 @@ function App() {
           </div>
 
           <div className={`solution-preview preview-${solution.id}`}>
-            {solution.id === "personal" &&
-              (shotPersonal ? (
-                <img alt="وضع الطوارئ" src={shotPersonal} style={shotStyle} />
-              ) : (
-                <PersonalPreview />
-              ))}
-            {solution.id === "professional" &&
-              (shotProfessional ? (
-                <img alt="وضع الأعمال" src={shotProfessional} style={shotStyle} />
-              ) : (
-                <ProfessionalPreview />
-              ))}
-            {solution.id === "events" &&
-              (shotEvents ? (
-                <img alt="وضع الفعاليات" src={shotEvents} style={shotStyle} />
-              ) : (
-                <EventPreview />
-              ))}
-            {solution.id === "gifts" &&
-              (shotGifts ? (
-                <img
-                  alt="لوحة هدية عيد ميلاد بباركود وأغنية"
-                  src={shotGifts}
-                  style={giftShotStyle}
-                />
-              ) : (
-                <GiftsPreview />
-              ))}
+            {solution.id === "personal" && <PersonalPreview />}
+            {solution.id === "professional" && <ProfessionalPreview />}
+            {solution.id === "events" && <EventPreview />}
+            {solution.id === "gifts" && <GiftsPreview />}
           </div>
         </div>
       </section>
@@ -672,6 +636,7 @@ function App() {
           <p>هوية ذكية لاتصالات أكثر أماناً وبساطة.</p>
           <div className="footer-links">
             <a href="#solutions">الحلول</a>
+            <a href="https://marhabanid.com/portfolio.html">المعرض</a>
             <a href="#security">الخصوصية</a>
             <a href="mailto:hello@marhabanid.com">تواصل معنا</a>
           </div>
