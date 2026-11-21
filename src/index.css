@@ -2877,3 +2877,5 @@ footer {
 .portfolio-card strong{font-size:1.4rem}
 .portfolio-card small{opacity:.8;line-height:1.7}
 .portfolio-card span{margin-top:6px;padding:10px 22px;border-radius:999px;background:#d4af37;color:#111;font-weight:700}
+
+.solution-panel{grid-template-columns:1fr!important}
